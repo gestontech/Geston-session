@@ -6,7 +6,7 @@ const fs = require('fs');
 const pino = require('pino');
 
 const {
-    default: Geston_MD,
+    default: Vandael_MD,
     useMultiFileAuthState,
     Browsers,
     delay,
@@ -77,7 +77,7 @@ router.get('/', async (req, res) => {
                 try { sock.ev.removeAllListeners('creds.update'); } catch {}
             }
 
-            sock = Geston_MD({
+            sock = Vandael_MD({
                 version,
                 auth: {
                     creds: state.creds,
@@ -134,7 +134,7 @@ router.get('/', async (req, res) => {
                         try {
                             await sock.sendMessage(userJid, {
                                 text: `◈━━━━━━━━━━━◈
-│❒ Hello! 👋 You're now connected to Geston-MD
+│❒ Hello! 👋 You're now connected to Vandael-MD
 
 │❒ Please wait a moment while we generate your session ID. It will be sent shortly here... 🙂
 ◈━━━━━━━━━━━◈`
@@ -209,7 +209,7 @@ router.get('/', async (req, res) => {
                                     text: `◈━━━━━━━━━━━◈
 SESSION CONNECTED
 
-│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your Geston-MD bot! 🔐
+│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your Vandael-MD bot! 🔐
 
 │❒ Need help? Reach out to us:
 

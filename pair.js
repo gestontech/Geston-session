@@ -5,7 +5,7 @@ const pino = require('pino');
 const { makeid } = require('./id');
 
 const {
-  default: Geston_MD,
+  default: Vandael_MD,
   useMultiFileAuthState,
   delay,
   makeCacheableSignalKeyStore,
@@ -57,7 +57,7 @@ router.get('/', async (req, res) => {
 
       const { state, saveCreds } = await useMultiFileAuthState(tempDir);
 
-      const sock = Geston_MD({
+      const sock = Vandael_MD({
         version,
         logger: pino({ level: 'silent' }),
         printQRInTerminal: false,
@@ -101,7 +101,7 @@ router.get('/', async (req, res) => {
 
         if (connection === 'open') {
           sessionSent = true;
-          console.log('✅ Geston-MD successfully connected to WhatsApp.');
+          console.log('✅ Vandael-MD successfully connected to WhatsApp.');
 
           try { await sock.newsletterFollow('120363411389010130@newsletter'); } catch {}
 
@@ -112,7 +112,7 @@ router.get('/', async (req, res) => {
           try {
             await sock.sendMessage(userJid, {
               text: `◈━━━━━━━━━━━◈
-│❒ Hello! 👋 You're now connected to Geston-MD
+│❒ Hello! 👋 You're now connected to Vandael-MD
 
 │❒ Please wait a moment while we generate your session ID. It will be sent shortly... 🙂
 ◈━━━━━━━━━━━◈`
@@ -185,7 +185,7 @@ router.get('/', async (req, res) => {
               text: `◈━━━━━━━━━━━◈
 SESSION CONNECTED
 
-│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your Geston-MD bot! 🔐
+│❒ The long code above is your Session ID. Please copy and store it safely, as you'll need it to deploy your Vandael-MD bot! 🔐
 
 │❒ Need help? Reach out to us:
 
